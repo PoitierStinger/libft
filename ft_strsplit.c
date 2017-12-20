@@ -6,22 +6,25 @@
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 16:11:48 by pstringe          #+#    #+#             */
-/*   Updated: 2017/12/17 18:57:23 by pstringe         ###   ########.fr       */
+/*   Updated: 2017/12/20 11:16:24 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-/*the purpose of this function is to return the number of words in the input string. this number is useful for allocating an array of pointers such that each pointer within the array points to a string that contains a copy of a word found within the input*/
+/*the purpose of this function is to return the number of words in the input string. 
+ * this number is useful for allocating an array of pointers such that each pointer
+ * within the array points to a string that contains a copy of a word found within 
+ * the input*/
 static int	ft_word_count(const char *s, char c)
 {
 	int flag;
 	int word;
 
 	flag = 0; /*this variable is used to indicate wheather it is a 
-	word or a set of a delimiter charaters currently being traversed 
-	over*/
+	*word or a set of a delimiter charaters currently being traversed 
+	*over*/
 	word = 0; /*this variable keeps track of the number of words in 
 	the string*/
 
