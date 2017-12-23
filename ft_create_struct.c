@@ -6,14 +6,15 @@
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 11:23:14 by pstringe          #+#    #+#             */
-/*   Updated: 2017/12/22 14:27:15 by pstringe         ###   ########.fr       */
+/*   Updated: 2017/12/22 16:28:45 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-/*create member*/
-t_member	*ft_create_member(const char *name, const char *type)
+/*create member - this works*/
+/*
+static t_member	*ft_create_member(const char *name, const char *type)
 {
 	t_member *new_member;
 
@@ -31,12 +32,13 @@ t_member	*ft_create_member(const char *name, const char *type)
 	}
 	return (NULL);
 }
-/*create name*/
-t_struct	*ft_name_struct(const char *name, const char *alias)
+*/
+/*create name - this works*/
+static t_name	*ft_name_struct(const char *name, const char *alias)
 {
-	t_struct *new_struct;
+	t_name *new_struct;
 
-	new_struct = (t_struct*)malloc(sizeof(new_struct));
+	new_struct = (t_name*)malloc(sizeof(new_struct));
 	if (!new_struct)
 	{
 		return (NULL);
@@ -50,21 +52,24 @@ t_struct	*ft_name_struct(const char *name, const char *alias)
 	}
 	return (NULL);
 }
-/*create struct*/
 
-/*
+void			ft_push_member(**t_member HEAD, t_member new_member)
+{
+
+}
+/*create struct*/
 t_struct	*ft_create_struct(t_struct new_struct_name, **t_member new_struct_members)
 {
 	
 }
-*/
+
 /*save struct*/
 
 int main(void)
 {
 	const char	*name = "Poitier";
 	const char	*type = "p_struct";
-	t_struct	*poitier;
+	t_name	*poitier;
 	
 	poitier = ft_name_struct(name, type);
 	printf("name:\t%s\ntype:\t%s\n\n", poitier->struct_name, poitier->struct_alias);
