@@ -6,7 +6,7 @@
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 10:09:13 by pstringe          #+#    #+#             */
-/*   Updated: 2018/07/28 20:47:16 by pstringe         ###   ########.fr       */
+/*   Updated: 2018/07/30 19:44:03 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ static void		swap_links(t_list *l1, t_list *l2)
 	l2->content_size = tmp_size;
 }
 
-void			ft_lstsort(t_list *begin,
-		int (*cmp)(void *, void *, void **, int), void **aux, int len)
+void			ft_lstsort(t_list *begin, int (*cmp)(void *, void *, void **, int), void **aux, int len)
 {
 	t_list		*link;
 	int			sorted;
