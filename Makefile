@@ -62,10 +62,13 @@ SRCS = ft_bzero.c\
 	   ft_strsub.c \
 	   ft_is_whitespace.c\
 	   ft_two_d_free.c\
+	   ft_lstsort.c\
+	   ft_lstforeach.c\
+	   ft_lstdstry.c\
 	   ft_lstsethead.c
 
 OBJS := $(patsubst %.c, %.o, $(SRCS))
-CFLAGS = -c -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 all : $(NAME)
 
@@ -74,12 +77,11 @@ $(NAME) : $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 clean : 
 	rm -f *.o
 
 fclean : clean
 	rm -f $(NAME)
-
 re : fclean all

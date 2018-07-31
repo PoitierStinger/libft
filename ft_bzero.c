@@ -6,7 +6,7 @@
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 18:40:31 by pstringe          #+#    #+#             */
-/*   Updated: 2017/12/20 10:35:26 by pstringe         ###   ########.fr       */
+/*   Updated: 2018/07/28 15:47:37 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*ss;
 
+	if (!s)
+		return ;
 	ss = (char *)s;
 	while (n--)
 	{

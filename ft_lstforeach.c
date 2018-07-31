@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstforeach.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/08 13:06:31 by pstringe          #+#    #+#             */
-/*   Updated: 2018/07/28 20:45:32 by pstringe         ###   ########.fr       */
+/*   Created: 2018/07/12 10:57:57 by pstringe          #+#    #+#             */
+/*   Updated: 2018/07/12 11:00:25 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_lstforeach(t_list *lst, void (*f)(), void **aux, int len)
 {
-	void	*memory;
+	t_list		*tmp;
 
-	memory = (void *)malloc(size);
-	if (memory == NULL)
+	tmp = lst;
+	while (tmp)
 	{
-		return (NULL);
+		f(tmp->content, aux, len);
+		tmp = tmp->next;
 	}
-	ft_memset(memory, 0, size);
-	return (memory);
 }

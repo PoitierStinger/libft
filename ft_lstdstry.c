@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstdstry.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pstringe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/08 13:06:31 by pstringe          #+#    #+#             */
-/*   Updated: 2018/07/28 20:45:32 by pstringe         ###   ########.fr       */
+/*   Created: 2018/07/13 10:50:51 by pstringe          #+#    #+#             */
+/*   Updated: 2018/07/28 20:44:24 by pstringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+static void	def(t_list *node)
 {
-	void	*memory;
+	ft_memdel((void**)&node->content);
+	node->content_size = 0;
+	ft_memdel((void**)&node);
+}
 
-	memory = (void *)malloc(size);
-	if (memory == NULL)
+void		ft_lstdstry(t_list **lst, void (*des)(t_list*))
+{
+	t_list *tmp;
+	t_list *next;
+
+	if (!des)
+		des = def;
+	tmp = *lst;
+	while (tmp)
 	{
-		return (NULL);
+		next = tmp->next;
+		des(tmp);
+		tmp = next;
 	}
-	ft_memset(memory, 0, size);
-	return (memory);
+	*lst = NULL;
 }
