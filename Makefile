@@ -1,6 +1,22 @@
 CC = gcc
 NAME = libft.a
-SRCS = ft_bzero.c\
+SRCS = ft_printf.c\
+	   algo.c\
+	   parse.c\
+	   init.c\
+	   help.c\
+	   string.c\
+	   digit.c\
+	   pointer.c\
+	   num_extract.c\
+	   num_convert.c\
+	   num_flags.c\
+	   num_mod.c\
+	   not.c\
+	   wide_string.c\
+	   num_help.c\
+	   char.c\
+	   ft_bzero.c\
 	   ft_memcpy.c\
 	   ft_memccpy.c\
 	   ft_strlen.c\
@@ -65,7 +81,8 @@ SRCS = ft_bzero.c\
 	   ft_lstsort.c\
 	   ft_lstforeach.c\
 	   ft_lstdstry.c\
-	   ft_lstsethead.c
+	   ft_lstsethead.c\
+	   get_next_line.c
 
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 CFLAGS = -Wall -Werror -Wextra
